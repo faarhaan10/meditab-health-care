@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Card, Col, Container, Image, Row } from 'react-bootstrap';
 import useServices from '../../hooks/useServices';
+import Pricing from './Pricing/Pricing';
 
 const Home = () => {
     const db = useServices();
@@ -13,7 +14,7 @@ const Home = () => {
         <div>
             <div className="App py-5">
                 <Container>
-                    <Row className=" py-5 align-items-center">
+                    <Row className="py-5 align-items-center">
                         <Col xs={12} md={6}>
                             <h1>
                             Progressive methods. Caring approach.
@@ -59,6 +60,7 @@ const Home = () => {
                     
                 </Container>
             </div>
+            <Pricing></Pricing>
         </div>
     );
 };
