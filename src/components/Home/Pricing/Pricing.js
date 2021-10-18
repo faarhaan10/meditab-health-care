@@ -3,9 +3,9 @@ import { Container, Row , Col, Card, Button} from 'react-bootstrap';
 
 const Pricing = () => {
     return (
-        <div id="#pricing">
+        <div>
             <Container>
-                <h1 className="text-center">Our Pricing</h1>
+                <h1  id="pricing" className="text-center pt-5">Our Pricing</h1>
                     <hr />
                 <div className="my-3">
                     <Row>

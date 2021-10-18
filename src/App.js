@@ -5,6 +5,7 @@ import Header from './components/Shared/Header/Header';
 import NotFound from './components/NotFound/NotFound';
 import Footer from './components/Shared/Footer/Footer';
 import Home from './components/Home/Home';
+import Pricing from './components/Home/Pricing/Pricing';
 
 
 function App() {
@@ -21,6 +22,10 @@ function App() {
           <Route path="/home">
             <Home/>
           </Route>
+
+          {/* <Route path="/home#pricing">
+            <Pricing></Pricing>
+          </Route> */}
 
           <Route path="*">
             <NotFound></NotFound>
