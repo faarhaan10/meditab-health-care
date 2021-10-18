@@ -48,7 +48,7 @@ const Home = () => {
                                                 </Card.Text>
                                                 
                                             </Card.Body>
-                                            <Card.Footer>
+                                            <Card.Footer className='bg-transparent border-0'>
                                             <Button className='w-100' variant="primary">Go somewhere</Button>
                                             </Card.Footer>
                                     </Card>
@@ -56,7 +56,6 @@ const Home = () => {
                             }
                         </Row>
                     </div>
-                    <hr />
                     
                 </Container>
             </div>
