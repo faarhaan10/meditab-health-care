@@ -17,13 +17,13 @@ const Header = () => {
                     <Navbar.Collapse id="responsive-navbar-nav ">
                         <Nav className="me-auto fw-bold">
                             <Nav.Link as={Link} to="/#home">Home</Nav.Link>
-                            <Nav.Link as={HashLink} to="/home#services">Services</Nav.Link>           
+                            <Nav.Link as={HashLink} to="/home#services">Services</Nav.Link>        
+                            <Nav.Link as={HashLink} to="/home#about">About</Nav.Link>           
+                            <Nav.Link as={HashLink} to="/home#contact">Contact</Nav.Link>           
                             <Nav.Link as={HashLink} to="/home#pricing">Pricing</Nav.Link> 
 
                             <Nav.Link as={HashLink} to="/doctors">Doctors</Nav.Link>    
-                                   
-                            <Nav.Link as={HashLink} to="/home#about">About us</Nav.Link>           
-                            <Nav.Link as={Link} to="/contact">Contact us</Nav.Link>           
+                                      
                         </Nav>
                         <Nav className="fw-bold">
                             <Nav.Link as={Link} to="/deets" disabled>More deets</Nav.Link>
