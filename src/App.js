@@ -7,6 +7,7 @@ import Footer from './components/Shared/Footer/Footer';
 import Home from './components/Home/Home';
 import Pricing from './components/Home/Pricing/Pricing';
 import AllServices from './components/AllServices/AllServices';
+import Doctors from './components/Doctors/Doctors';
 
 
 function App() {
@@ -30,6 +31,10 @@ function App() {
 
           <Route path="/pricing">
             <Pricing></Pricing>
+          </Route>
+
+          <Route path="/doctors">
+            <Doctors></Doctors>
           </Route>
 
           <Route path="*">
