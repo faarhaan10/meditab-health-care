@@ -6,6 +6,7 @@ import NotFound from './components/NotFound/NotFound';
 import Footer from './components/Shared/Footer/Footer';
 import Home from './components/Home/Home';
 import Pricing from './components/Home/Pricing/Pricing';
+import AllServices from './components/AllServices/AllServices';
 
 
 function App() {
@@ -23,9 +24,13 @@ function App() {
             <Home/>
           </Route>
 
-          {/* <Route path="/home#pricing">
+          <Route path="/services">
+            <AllServices></AllServices>
+          </Route>
+
+          <Route path="/pricing">
             <Pricing></Pricing>
-          </Route> */}
+          </Route>
 
           <Route path="*">
             <NotFound></NotFound>

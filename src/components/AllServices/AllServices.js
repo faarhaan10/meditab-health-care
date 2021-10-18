@@ -1,23 +1,21 @@
 import React from 'react';
-import { Card, Container, Row , Button, Col} from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Card, Col, Container, Row , Button} from 'react-bootstrap';
 import useServices from '../../hooks/useServices';
 
-const Services = () => {
+const AllServices = () => {
     const db = useServices();
     const allServices = db.services || [];
     
     
-    const newData = allServices.filter(service => service.id <= 6)
     return (
-        <div id="services" className="py-5">
+        <div className="py-5">
                 <Container>
                     <h1 className='text-center'>Explore Our Caring 	&#38; Premium <br />Medical Services</h1>
                     <hr />
                     <div>
                         <Row>
                             {
-                                newData.map(service => <Col xs={12} md={6} lg={4}
+                                allServices.map(service => <Col xs={12} md={6} lg={4}
                                     className=" my-2"
                                     key={service.id}
                                 >
@@ -37,11 +35,6 @@ const Services = () => {
                                 </Col>)
                             }
                         </Row>
-                        <div className="d-flex justify-content-end">
-                            <Link to="/services">
-                                <Button className='' variant="primary">More... </Button>
-                            </Link>
-                        </div>
                     </div>
                     
                 </Container>
@@ -49,4 +42,4 @@ const Services = () => {
     );
 };
 
-export default Services;
+export default AllServices;
