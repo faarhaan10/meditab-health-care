@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, Col, Container, Row , Button} from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import useServices from '../../hooks/useServices';
 
 const AllServices = () => {
@@ -29,7 +30,9 @@ const AllServices = () => {
                                                 
                                             </Card.Body>
                                             <Card.Footer className='bg-transparent border-0'>
-                                            <Button className='w-100' variant="primary">Go somewhere</Button>
+                                            <Link to={`/service/${service.id}`}>
+                                                <Button className='w-100' variant="primary">Go somewhere</Button>
+                                            </Link>
                                             </Card.Footer>
                                     </Card>
                                 </Col>)

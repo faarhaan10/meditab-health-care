@@ -7,8 +7,8 @@ const Services = () => {
     const db = useServices();
     const allServices = db.services || [];
     
-    
     const newData = allServices.filter(service => service.id <= 6)
+
     return (
         <div id="services" className="py-5">
                 <Container>
@@ -31,7 +31,9 @@ const Services = () => {
                                                 
                                             </Card.Body>
                                             <Card.Footer className='bg-transparent border-0'>
-                                            <Button className='w-100' variant="primary">Go somewhere</Button>
+                                            <Link to={`/service/${service.id}`}>
+                                                <Button className='w-100' variant="primary">Go somewhere</Button>
+                                            </Link>
                                             </Card.Footer>
                                     </Card>
                                 </Col>)

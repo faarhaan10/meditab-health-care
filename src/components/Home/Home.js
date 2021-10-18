@@ -2,9 +2,7 @@ import React from 'react';
 import { Button, Col, Container, Image, Row } from 'react-bootstrap';
 import Services from '../Services/Services';
 import About from './About/About';
-import Contact from './Contact/Contact';
 import Gallery from './Gallery/Gallery';
-import Pricing from './Pricing/Pricing';
 
 const Home = () => {
  
@@ -29,7 +27,6 @@ const Home = () => {
             </div>
             
             <Services></Services>
-            <Pricing></Pricing>
             <About></About>
             <Gallery></Gallery>
         </div>
