@@ -1,18 +1,16 @@
 import React, { useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
+import { useLocation , useHistory} from 'react-router';
 import useAuth from '../../hooks/useAuth';
 
 
 const Login = () => {
     const [isLogin,setIsLogin] = useState(false);
-    // const [name,setName] = useState('');
-    // const [email,setEmail] = useState('');
-    // const [password,setPassword] = useState('');
     const {user,handleGoogleSignIn,handleGitHubSignIn,handleEmailPassSignUp,handleEmailPassSignIN,error,setError} = useAuth();
-
-
     const { register, handleSubmit } = useForm();
+
+
 
     const onSubmit = data => {
         const {name,email,password} = data;
@@ -35,6 +33,19 @@ const Login = () => {
 
     const handleToggle = e => {
         setIsLogin(e.target.checked)
+    }
+
+    
+    const location = useLocation();
+    console.log('came from', location.state?.from);
+
+    const redirect_uri = location.state?.from || '/';
+    const history = useHistory();
+    const handleGoogleLogin = () => {
+        handleGoogleSignIn()
+        .then(res => {
+            history.push(redirect_uri);
+        })
     }
     // console.log(user)
     return (
@@ -73,12 +84,14 @@ const Login = () => {
                         {error && <p className="text-danger text-center m-0 p-0">{error}</p>}
                     </Form>             
                 </div>
+
                 {/* google and github login  */}
                 <div className="d-flex justify-content-center">
                     <div className="">
                         <p className="text-success text-center m-0 p-0">Sign in with</p>
                         <div className="">
-                            <button onClick={handleGoogleSignIn} type="button" className="m-2 btn btn-outline-success rounded-pill"><i className="fab fa-google"></i></button>
+                            <button onClick={handleGoogleLogin} type="button" className="m-2 btn btn-outline-success rounded-pill"><i className="fab fa-google"></i></button>
+
                             <button onClick={handleGitHubSignIn} type="button" className="m-2 btn btn-outline-dark rounded-pill"><i className=" fab fa-github"></i></button>
                         </div>
                     </div>

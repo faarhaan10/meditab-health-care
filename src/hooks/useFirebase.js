@@ -14,13 +14,7 @@ const useFirebase = () => {
 
 
     const handleGoogleSignIn = () => {
-        signInWithPopup(auth, googleProvider)
-        .then(res => {
-            setUser(res.user)
-        })
-        .catch(error => {
-            setError(error.message);
-        })
+        return signInWithPopup(auth, googleProvider)
     }
 
     const handleGitHubSignIn = () => {
@@ -32,7 +26,7 @@ const useFirebase = () => {
             setError(error.message);
         })
     }
-    // console.log('firebase',email,password)
+    
     const handleEmailPassSignIN = (email,password) => {
         
         signInWithEmailAndPassword(auth, email, password)
