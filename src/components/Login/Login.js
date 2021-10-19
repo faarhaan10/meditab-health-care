@@ -7,22 +7,24 @@ import useAuth from '../../hooks/useAuth';
 
 const Login = () => {
     const [isLogin,setIsLogin] = useState(false);
-    const {user,handleGoogleSignIn,handleGitHubSignIn,handleEmailPassSignUp,handleEmailPassSignIN,error,setError} = useAuth();
+    const {handleGoogleSignIn,handleGitHubSignIn,handleEmailPassSignUp,handleEmailPassSignIN,error,setError} = useAuth();
     const { register, handleSubmit } = useForm();
+    const location = useLocation()
+    const history = useHistory();
+    const redirect_uri = location.state?.from || '/';
 
 
 
     const onSubmit = data => {
         const {name,email,password} = data;
         console.log('login',email,password)
-        if(password.length > 6){
+        if(password.length >= 6){
             if(isLogin){
-                handleEmailPassSignIN(email,password);
-                console.log('now sign in')
+                handleUserLogin(email,password);
             }
             else{
-                handleEmailPassSignUp(email,password);
-                user.displayName= name;
+                handleUserReg(email,password);
+                
             }
         }
         else{
@@ -35,14 +37,29 @@ const Login = () => {
         setIsLogin(e.target.checked)
     }
 
-    
-    const location = useLocation();
-    console.log('came from', location.state?.from);
-
-    const redirect_uri = location.state?.from || '/';
-    const history = useHistory();
     const handleGoogleLogin = () => {
         handleGoogleSignIn()
+        .then(res => {
+            history.push(redirect_uri);
+        })
+    }
+
+    const handleGitHubLogin = () => {
+        handleGitHubSignIn()
+        .then(res => {
+            history.push(redirect_uri);
+        })
+    }
+
+    const handleUserLogin = (email,password) => {
+        handleEmailPassSignIN(email,password)
+        .then(res => {
+            history.push(redirect_uri);
+        })
+    }
+
+    const handleUserReg = (email,password) => {
+        handleEmailPassSignUp(email,password)
         .then(res => {
             history.push(redirect_uri);
         })
@@ -92,7 +109,7 @@ const Login = () => {
                         <div className="">
                             <button onClick={handleGoogleLogin} type="button" className="m-2 btn btn-outline-success rounded-pill"><i className="fab fa-google"></i></button>
 
-                            <button onClick={handleGitHubSignIn} type="button" className="m-2 btn btn-outline-dark rounded-pill"><i className=" fab fa-github"></i></button>
+                            <button onClick={handleGitHubLogin} type="button" className="m-2 btn btn-outline-dark rounded-pill"><i className=" fab fa-github"></i></button>
                         </div>
                     </div>
                 </div>

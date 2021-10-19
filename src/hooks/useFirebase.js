@@ -18,34 +18,15 @@ const useFirebase = () => {
     }
 
     const handleGitHubSignIn = () => {
-        signInWithPopup(auth, gitHubProvider)
-        .then(res => {
-            
-        })
-        .catch(error => {
-            setError(error.message);
-        })
+        return signInWithPopup(auth, gitHubProvider)
     }
     
     const handleEmailPassSignIN = (email,password) => {
-        
-        signInWithEmailAndPassword(auth, email, password)
-        .then(res => {
-            
-        })
-        .catch(error => {
-            setError(error.message);
-        })
+        return signInWithEmailAndPassword(auth, email, password)
     }
 
     const handleEmailPassSignUp = (email,password) => {
-        createUserWithEmailAndPassword(auth, email, password)
-        .then(res => {
-            
-        })
-        .catch(error => {
-            setError(error.message);
-        })
+        return createUserWithEmailAndPassword(auth, email, password)
     }
 
     
