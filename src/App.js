@@ -12,6 +12,7 @@ import Service from './components/Service/Service';
 import Contact from './components/Home/Contact/Contact';
 import Login from './components/Login/Login';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
+import Privetroute from './components/Privetroute/Privetroute';
 
 
 function App() {
@@ -37,13 +38,13 @@ function App() {
             <Contact></Contact>
           </Route>
 
-          <Route path="/pricing">
+          <Privetroute path="/pricing">
             <Pricing></Pricing>
-          </Route>
+          </Privetroute>
 
-          <Route path="/doctors">
+          <Privetroute path="/doctors">
             <Doctors></Doctors>
-          </Route>
+          </Privetroute>
 
           <Route path="/service/:serviceID">
             <Service></Service>
