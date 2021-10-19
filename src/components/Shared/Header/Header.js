@@ -5,7 +5,7 @@ import { HashLink } from 'react-router-hash-link';
 import useAuth from '../../../hooks/useAuth';
 
 const Header = () => {
-    const {user} = useAuth();
+    const {user, handleSignOut} = useAuth();
     console.log(user)
     
     return (
@@ -40,7 +40,7 @@ const Header = () => {
                             Sign in
                             </Nav.Link>
                             :
-                            <Button variant="outline-danger">Sign Out</Button>}
+                            <Button onClick={handleSignOut} variant="outline-danger">Sign Out</Button>}
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
