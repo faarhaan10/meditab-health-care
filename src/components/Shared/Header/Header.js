@@ -6,7 +6,6 @@ import useAuth from '../../../hooks/useAuth';
 
 const Header = () => {
     const {user, handleSignOut} = useAuth();
-    // console.log(user)
     
     return (
         <div className="App">

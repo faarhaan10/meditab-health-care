@@ -18,7 +18,7 @@ const Login = () => {
 
     const onSubmit = data => {
         const {name,email,password} = data;
-        console.log('login',email,password)
+        
         if(password.length >= 6){
             if(isLogin){
                 handleUserLogin(email,password);
@@ -81,7 +81,7 @@ const Login = () => {
         })
         .finally(() => setIsLoading(false))
     }
-    // console.log(user)
+    
     return (
         <div>
             <Container className="d-flex justify-content-center align-items-center p-5">

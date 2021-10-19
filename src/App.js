@@ -13,12 +13,15 @@ import Contact from './components/Home/Contact/Contact';
 import Login from './components/Login/Login';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
 import Privetroute from './components/Privetroute/Privetroute';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 
 
 function App() {
   return (
     <AuthProvider>
       <BrowserRouter>
+      {/* scroll restoration */}
+      <ScrollToTop />
         <Header/>
 
         <Switch>
