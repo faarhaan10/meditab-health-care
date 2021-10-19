@@ -6,7 +6,7 @@ import useAuth from '../../../hooks/useAuth';
 
 const Header = () => {
     const {user, handleSignOut} = useAuth();
-    console.log(user)
+    // console.log(user)
     
     return (
         <div className="App">
@@ -35,8 +35,8 @@ const Header = () => {
                                       
                         </Nav>
                         <Nav className="fw-bold">
-                            {user.displayName && <Nav.Link as={Link} to="/deets" disabled>{user.displayName}</Nav.Link>}
-                            {!user.displayName ? <Nav.Link  as={Link} to="/login">
+                            {user.email && <Nav.Link as={Link} to="/deets" disabled>{user.displayName}</Nav.Link>}
+                            {!user.email ? <Nav.Link  as={Link} to="/login">
                             Sign in
                             </Nav.Link>
                             :

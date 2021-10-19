@@ -5,11 +5,33 @@ import useAuth from '../../hooks/useAuth';
 
 
 const Login = () => {
-    const [isLogin,setIsLogin] = useState(false)
-    const { register, handleSubmit } = useForm();
-    const onSubmit = data => console.log(data);
+    const [isLogin,setIsLogin] = useState(false);
+    // const [name,setName] = useState('');
+    // const [email,setEmail] = useState('');
+    // const [password,setPassword] = useState('');
+    const {user,handleGoogleSignIn,handleGitHubSignIn,handleEmailPassSignUp,handleEmailPassSignIN,error,setError} = useAuth();
 
-    const {user,handleGoogleSignIn,handleGitHubSignIn} = useAuth();
+
+    const { register, handleSubmit } = useForm();
+
+    const onSubmit = data => {
+        const {name,email,password} = data;
+        console.log('login',email,password)
+        if(password.length > 6){
+            if(isLogin){
+                handleEmailPassSignIN(email,password);
+                console.log('now sign in')
+            }
+            else{
+                handleEmailPassSignUp(email,password);
+                user.displayName= name;
+            }
+        }
+        else{
+            setError('Password should be at least 6 Characters');
+        }
+    };
+
 
     const handleToggle = e => {
         setIsLogin(e.target.checked)
@@ -23,6 +45,11 @@ const Login = () => {
                 <div className="" style={{width:'20rem'}}>
                     <h2>Please {!isLogin?'Register': 'Login'}</h2>
                     <Form  onSubmit={handleSubmit(onSubmit)}>
+
+                        {!isLogin && <Form.Group className="">
+                            <Form.Label>Enter Your Name:</Form.Label>
+                            <Form.Control type="text" placeholder="Name"  {...register("name")}  required/>
+                        </Form.Group>}
 
                         <Form.Group className="">
                             <Form.Label>Email address</Form.Label>
@@ -43,12 +70,13 @@ const Login = () => {
                         <Button variant="primary" type="submit" className='w-100 fw-bold'>
                             {isLogin?'Log in':'Register'}
                         </Button>
+                        {error && <p className="text-danger text-center m-0 p-0">{error}</p>}
                     </Form>             
                 </div>
                 {/* google and github login  */}
                 <div className="d-flex justify-content-center">
                     <div className="">
-                        <p className="text-danger text-center m-0 p-0">Sign in with</p>
+                        <p className="text-success text-center m-0 p-0">Sign in with</p>
                         <div className="">
                             <button onClick={handleGoogleSignIn} type="button" className="m-2 btn btn-outline-success rounded-pill"><i className="fab fa-google"></i></button>
                             <button onClick={handleGitHubSignIn} type="button" className="m-2 btn btn-outline-dark rounded-pill"><i className=" fab fa-github"></i></button>
