@@ -17,7 +17,7 @@ const Login = () => {
 
 
     const onSubmit = data => {
-        const {name,email,password} = data;
+        const {email,password} = data;
         
         if(password.length >= 6){
             if(isLogin){

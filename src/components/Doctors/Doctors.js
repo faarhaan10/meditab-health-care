@@ -12,7 +12,7 @@ const Doctors = () => {
                 <Row>
                     {
                         doctors.map(doctor =><Col 
-                            key={doctor.dId}
+                            key={doctor.dID}
                             xs={12} md={6} lg={3}
                             className="my-2"
                             >

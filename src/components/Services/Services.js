@@ -41,7 +41,7 @@ const Services = () => {
                         </Row>
                         <div className="d-flex justify-content-end">
                             <Link to="/services">
-                                <Button className='' variant="outline-primary">More Services...<i class="fas fa-angle-double-right"></i></Button>
+                                <Button className='' variant="outline-primary">More Services...<i className="fas fa-angle-double-right"></i></Button>
                             </Link>
                         </div>
                     </div>
