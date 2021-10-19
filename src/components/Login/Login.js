@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
+import useAuth from '../../hooks/useAuth';
 
 
 const Login = () => {
@@ -8,10 +9,12 @@ const Login = () => {
     const { register, handleSubmit } = useForm();
     const onSubmit = data => console.log(data);
 
+    const {user,handleGoogleSignIn,handleGitHubSignIn} = useAuth();
+
     const handleToggle = e => {
         setIsLogin(e.target.checked)
     }
-    console.log(isLogin)
+    // console.log(user)
     return (
         <div>
             <Container className="d-flex justify-content-center align-items-center p-5">
@@ -42,12 +45,13 @@ const Login = () => {
                         </Button>
                     </Form>             
                 </div>
+                {/* google and github login  */}
                 <div className="d-flex justify-content-center">
                     <div className="">
                         <p className="text-danger text-center m-0 p-0">Sign in with</p>
                         <div className="">
-                            <button type="button" className="m-2 btn btn-outline-success rounded-pill"><i className="m-2 fab fa-google"></i></button>
-                            <button type="button" className="m-2 btn btn-outline-dark rounded-pill"><i className="m-2 fab fa-github"></i></button>
+                            <button onClick={handleGoogleSignIn} type="button" className="m-2 btn btn-outline-success rounded-pill"><i className="fab fa-google"></i></button>
+                            <button onClick={handleGitHubSignIn} type="button" className="m-2 btn btn-outline-dark rounded-pill"><i className=" fab fa-github"></i></button>
                         </div>
                     </div>
                 </div>

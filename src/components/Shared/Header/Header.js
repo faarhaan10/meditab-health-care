@@ -1,9 +1,12 @@
 import React from 'react';
-import { Container, Image, Nav, Navbar } from 'react-bootstrap';
+import { Container, Image, Nav, Navbar , Button} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
+import useAuth from '../../../hooks/useAuth';
 
 const Header = () => {
+    const {user} = useAuth();
+    console.log(user)
     
     return (
         <div className="App">
@@ -32,10 +35,12 @@ const Header = () => {
                                       
                         </Nav>
                         <Nav className="fw-bold">
-                            <Nav.Link as={Link} to="/deets" disabled>More deets</Nav.Link>
-                            <Nav.Link  as={Link} to="/login">
+                            {user.displayName && <Nav.Link as={Link} to="/deets" disabled>{user.displayName}</Nav.Link>}
+                            {!user.displayName ? <Nav.Link  as={Link} to="/login">
                             Sign in
                             </Nav.Link>
+                            :
+                            <Button variant="outline-danger">Sign Out</Button>}
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

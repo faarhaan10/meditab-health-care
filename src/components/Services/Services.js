@@ -21,7 +21,7 @@ const Services = () => {
                                     className=" my-2"
                                     key={service.id}
                                 >
-                                    <Card className='h-100'>
+                                    <Card className='h-100 meditab'>
                                         <Card.Img className="px-5" variant="top" src={service.icon} />
                                             <Card.Body>
                                                 <Card.Title>{service.serviceName}</Card.Title>

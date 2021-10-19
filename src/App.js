@@ -11,11 +11,12 @@ import Doctors from './components/Doctors/Doctors';
 import Service from './components/Service/Service';
 import Contact from './components/Home/Contact/Contact';
 import Login from './components/Login/Login';
+import AuthProvider from './contexts/AuthProvider/AuthProvider';
 
 
 function App() {
   return (
-    <div className="">
+    <AuthProvider>
       <BrowserRouter>
         <Header/>
 
@@ -59,7 +60,7 @@ function App() {
 
         <Footer/>
       </BrowserRouter>
-    </div>
+    </AuthProvider>
   );
 }
 
