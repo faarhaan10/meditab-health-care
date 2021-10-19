@@ -46,9 +46,9 @@ function App() {
             <Doctors></Doctors>
           </Privetroute>
 
-          <Route path="/service/:serviceID">
+          <Privetroute path="/service/:serviceID">
             <Service></Service>
-          </Route>
+          </Privetroute>
 
           <Route path="/login">
             <Login></Login>

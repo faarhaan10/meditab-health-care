@@ -7,11 +7,12 @@ import useAuth from '../../hooks/useAuth';
 
 const Login = () => {
     const [isLogin,setIsLogin] = useState(false);
-    const {handleGoogleSignIn,handleGitHubSignIn,handleEmailPassSignUp,handleEmailPassSignIN,error,setError} = useAuth();
+    const {handleGoogleSignIn,handleGitHubSignIn,handleEmailPassSignUp,handleEmailPassSignIN,error,setError,setIsLoading} = useAuth();
     const { register, handleSubmit } = useForm();
     const location = useLocation()
     const history = useHistory();
     const redirect_uri = location.state?.from || '/';
+    
 
 
 
@@ -42,6 +43,10 @@ const Login = () => {
         .then(res => {
             history.push(redirect_uri);
         })
+        .catch(error => {
+            setError(error.message)
+        })
+        .finally(() => setIsLoading(false))
     }
 
     const handleGitHubLogin = () => {
@@ -49,6 +54,10 @@ const Login = () => {
         .then(res => {
             history.push(redirect_uri);
         })
+        .catch(error => {
+            setError(error.message)
+        })
+        .finally(() => setIsLoading(false))
     }
 
     const handleUserLogin = (email,password) => {
@@ -56,6 +65,10 @@ const Login = () => {
         .then(res => {
             history.push(redirect_uri);
         })
+        .catch(error => {
+            setError(error.message)
+        })
+        .finally(() => setIsLoading(false))
     }
 
     const handleUserReg = (email,password) => {
@@ -63,6 +76,10 @@ const Login = () => {
         .then(res => {
             history.push(redirect_uri);
         })
+        .catch(error => {
+            setError(error.message)
+        })
+        .finally(() => setIsLoading(false))
     }
     // console.log(user)
     return (

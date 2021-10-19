@@ -7,6 +7,7 @@ initializeAuthentication();
 const useFirebase = () => {
     const [user,setUser] = useState({});
     const [error,setError] = useState('');
+    const [isLoading,setIsLoading] = useState(true);
 
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
@@ -14,18 +15,22 @@ const useFirebase = () => {
 
 
     const handleGoogleSignIn = () => {
+        setIsLoading(true);
         return signInWithPopup(auth, googleProvider)
     }
 
     const handleGitHubSignIn = () => {
+        setIsLoading(true);
         return signInWithPopup(auth, gitHubProvider)
     }
     
     const handleEmailPassSignIN = (email,password) => {
+        setIsLoading(true);
         return signInWithEmailAndPassword(auth, email, password)
     }
 
     const handleEmailPassSignUp = (email,password) => {
+        setIsLoading(true);
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
@@ -38,18 +43,21 @@ const useFirebase = () => {
                 setUser(user);
                 setError('')
             } else {
-              
+                setUser({});
             }
+            setIsLoading(false);
           });
         return () => unsubscribed;
     },[auth])
     
     const handleSignOut = () => {
+        setIsLoading(true);
         signOut(auth).then(() => {
             setUser({});
           }).catch((error) => {
             setError(error.message);
-          });
+          })
+          .finally(() => setIsLoading(false))
     }
 
 
@@ -61,7 +69,9 @@ const useFirebase = () => {
         handleGitHubSignIn,
         handleEmailPassSignIN,
         handleEmailPassSignUp,
-        handleSignOut
+        handleSignOut,
+        isLoading,
+        setIsLoading
     };
 };
 

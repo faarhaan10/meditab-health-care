@@ -5,7 +5,7 @@ import useServices from '../../hooks/useServices';
 const Doctors = () => {
     const db = useServices();
     const doctors = db.doctors || [];
-    console.log(doctors)
+    
     return (
         <div>
             <Container>

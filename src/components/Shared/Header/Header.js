@@ -12,7 +12,7 @@ const Header = () => {
         <div className="App">
             <Navbar collapseOnSelect expand="lg" bg="" variant="" className="py-0 App" fixed="top">
                 <Container>
-                    <Navbar.Brand as={Link} to="/home" className="py-0">
+                    <Navbar.Brand as={Link} to="/" className="py-0">
                         <Image fluid width='150' src="https://i.ibb.co/qB7fS5v/logo.png" alt="logo"/>
                     </Navbar.Brand>
 

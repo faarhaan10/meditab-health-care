@@ -32,7 +32,7 @@ const Services = () => {
                                             </Card.Body>
                                             <Card.Footer className='bg-transparent border-0'>
                                             <Link to={`/service/${service.id}`}>
-                                                <Button className='w-100' variant="primary">Go somewhere</Button>
+                                                <Button className='w-100' variant="outline-primary">Learn more</Button>
                                             </Link>
                                             </Card.Footer>
                                     </Card>
@@ -41,7 +41,7 @@ const Services = () => {
                         </Row>
                         <div className="d-flex justify-content-end">
                             <Link to="/services">
-                                <Button className='' variant="primary">More... </Button>
+                                <Button className='' variant="outline-primary">More Services...<i class="fas fa-angle-double-right"></i></Button>
                             </Link>
                         </div>
                     </div>
