@@ -17,7 +17,7 @@ const Home = () => {
                             <h1>
                             Progressive methods. Caring approach.
                             </h1>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio facilis, vitae optio fuga dolorem soluta esse quia iste veritatis similique.</p>
+                            <p>Trusted results for Cancer Hospital In New York. Check Visymo Search for the best results! Unlimited Access. 100% Secure. Always Facts. Privacy Friendly. The Best Resources. Results and Answers. Types: Best Results, Explore Now, New Sources, Best in Search.</p>
                             <Link to="/pricing">
                                 <Button>Make Appointment</Button>
                             </Link>
