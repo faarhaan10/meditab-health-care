@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
     return (
         <div className="bg-info text-white">
+            {/* simple footer  */}
             <Container>
                 <Row className="align-items-center py-5">
                     <Col xs={12} md={6} lg={4}>
@@ -40,6 +41,17 @@ const Footer = () => {
                         <div className="d-flex justify-content-between mx-3 fw-bold">
                             <p>Friday:</p>
                             <p>closed</p>
+                        </div>
+                    </Col>
+                </Row>
+                <Row className='justify-content-between'>
+                    <Col xs={6}><p>&copy; MediTab Health Care. A Programming-Hero Initiative</p> </Col>
+                    <Col xs={3} >
+                        <div className="d-flex justify-content-end">
+                        <i className="ms-3 fab fa-google-plus"></i>
+                        <i className="ms-3 fab fa-facebook"></i>
+                        <i className="ms-3 fab fa-twitter"></i>
+                        <i className="ms-3 fab fa-linkedin-in"></i>
                         </div>
                     </Col>
                 </Row>

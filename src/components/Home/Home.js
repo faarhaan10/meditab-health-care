@@ -10,6 +10,7 @@ const Home = () => {
     
     return (
         <div>
+            {/* banner */}
             <div className="App py-5"  id="#home">
                 <Container>
                     <Row className="py-5 align-items-center">
@@ -29,7 +30,7 @@ const Home = () => {
                     </Row>
                 </Container>
             </div>
-            
+            {/* other sections  */}
             <HomeServices></HomeServices>
             <About></About>
             <Gallery></Gallery>

@@ -1,9 +1,11 @@
 import React from 'react';
 import { Accordion, Col, Container, Image, Row } from 'react-bootstrap';
 
+// simple about Accordion
 const About = () => {
     return (
         <div id="about" className='pt-5'>
+            {/* simple about page  */}
             <Container>
                 <Row className="align-items-center">
                     <Col xs={12} md={6}>

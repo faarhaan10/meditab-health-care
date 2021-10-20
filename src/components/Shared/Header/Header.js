@@ -9,6 +9,7 @@ const Header = () => {
     
     return (
         <div className="App">
+            {/* simple header  */}
             <Navbar collapseOnSelect expand="lg" bg="" variant="light" className="py-0 App" fixed="top">
                 <Container>
                     <Navbar.Brand as={Link} to="/" className="py-0">
@@ -17,6 +18,7 @@ const Header = () => {
 
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
+{/* linking all routes and hashlinks  */}
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto fw-bold">
                             <Nav.Link as={Link} to="/home" >Home</Nav.Link>
@@ -33,13 +35,14 @@ const Header = () => {
                             <Nav.Link as={Link} to="/doctors">Doctors</Nav.Link>    
                                       
                         </Nav>
+        {/* login user and sign out  */}
                         <Nav className="fw-bold">
                             {user.email && <Nav.Link    className='text-primary' disabled>{user.displayName || 'Please Reload'}</Nav.Link>}
                             {!user.email ? <Nav.Link  as={Link} to="/login">
                             Sign in
                             </Nav.Link>
                             :
-                            <Button onClick={handleSignOut} variant="outline-danger">Sign Out</Button>}
+                            <Button onClick={handleSignOut} variant="outline-danger">Sign Out <i className="fas fa-sign-out-alt"></i></Button>}
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

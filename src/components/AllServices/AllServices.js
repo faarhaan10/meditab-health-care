@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import useServices from '../../hooks/useServices';
 
 const AllServices = () => {
+    // get all data first 
     const db = useServices();
     const allServices = db.services || [];
     
@@ -15,6 +16,7 @@ const AllServices = () => {
                     <hr />
                     <div>
                         <Row>
+                            {/* single service card  */}
                             {
                                 allServices.map(service => <Col xs={12} md={6} lg={4}
                                     className=" my-2"

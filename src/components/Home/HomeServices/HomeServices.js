@@ -4,9 +4,11 @@ import { Link } from 'react-router-dom';
 import useServices from '../../../hooks/useServices';
 
 const HomeServices = () => {
+    // get all data first 
     const db = useServices();
     const allServices = db.services || [];
     
+    // filter to take only 6data 
     const newData = allServices.filter(service => service.id <= 6)
 
     return (
@@ -15,12 +17,14 @@ const HomeServices = () => {
                     <h1 className='text-center'>Explore Our Caring 	&#38; Premium <br />Medical Services</h1>
                     <hr />
                     <div>
+                        
                         <Row>
                             {
                                 newData.map(service => <Col xs={12} md={6} lg={4}
                                     className=" my-2"
                                     key={service.id}
                                 >
+                                    {/* single service card  */}
                                     <Card className='h-100 meditab'>
                                         <Card.Img className="px-5" variant="top" src={service.icon} />
                                             <Card.Body>

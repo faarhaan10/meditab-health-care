@@ -3,6 +3,7 @@ import { Col, Container, Image, Row } from 'react-bootstrap';
 import useServices from '../../../hooks/useServices';
 
 const Gallery = () => {
+    // get all data first 
     const db = useServices();
     const photos = db.gallery || [];
     
@@ -12,11 +13,13 @@ const Gallery = () => {
             <h1 className="text-center">Our Gallery</h1>
             <hr />
                 <Row>
+                   
                     {
                         photos.map(photo => <Col
                             key={photo.imgId}
                             xs={6} md={4}
                         >
+                             {/* single gallery image card  */}
                                 <div className="py-2">
                                     <Image fluid src={photo.thumb} />
                                 </div>

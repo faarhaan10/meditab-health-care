@@ -6,9 +6,12 @@ import useServices from '../../hooks/useServices';
 
 const PlaceOrder = () => {
     const {priceID} = useParams();
+
+    // get all data first 
     const db = useServices();
     const pricing = db.pricing || [];
 
+    // find the specific package 
     const selectedPackage = pricing.find(price => price.pId === parseInt(priceID)) || {};
     
     return (

@@ -7,9 +7,10 @@ import useServices from '../../hooks/useServices';
 const Service = () => {
     const {serviceID} = useParams();
     
-
+// get all data first 
     const db = useServices();
     const allServices = db.services || [];
+//find the specific service id using params
     const selectedService = allServices.find(service => service.id === parseInt(serviceID));
     
     

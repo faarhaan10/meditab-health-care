@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 const Contact = () => {
     return (
         <div className="bg-info pt-5" id="contact">
+            {/* simple contact page */}
             <Container className="mt-5">
                 <Row className="align-items-center pt-2">
                     <Col xs={12} md={6}>
