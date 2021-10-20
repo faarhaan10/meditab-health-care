@@ -6,7 +6,7 @@ import useServices from '../../../hooks/useServices';
 const Pricing = () => {
     const db = useServices();
     const pricing = db.pricing || [];
-    console.log(pricing)
+    
     return (
         <div>
             <Container>

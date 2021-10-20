@@ -12,9 +12,10 @@ import Service from './components/Service/Service';
 import Contact from './components/Home/Contact/Contact';
 import Login from './components/Login/Login';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
-import Privetroute from './components/Privetroute/Privetroute';
+import PrivetRoute from './components/PrivetRoute/PrivetRoute';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import PlaceOrder from './components/PlaceOrder/PlaceOrder';
+import CheckOut from './components/CheckOut/CheckOut';
 
 
 function App() {
@@ -44,21 +45,25 @@ function App() {
             <Contact></Contact>
           </Route>
 
-          <Privetroute path="/pricing">
+          <PrivetRoute path="/pricing">
             <Pricing></Pricing>
-          </Privetroute>
+          </PrivetRoute>
 
-          <Privetroute path="/doctors">
+          <PrivetRoute path="/doctors">
             <Doctors></Doctors>
-          </Privetroute>
+          </PrivetRoute>
 
-          <Privetroute path="/service/:serviceID">
+          <PrivetRoute path="/service/:serviceID">
             <Service></Service>
-          </Privetroute>
+          </PrivetRoute>
 
-          <Privetroute path="/placeorder/:priceID">
+          <PrivetRoute path="/placeorder/:priceID">
             <PlaceOrder></PlaceOrder>
-          </Privetroute>
+          </PrivetRoute>
+
+          <PrivetRoute path="/checkout">
+            <CheckOut></CheckOut>
+          </PrivetRoute>
 
           <Route path="/login">
             <Login></Login>

@@ -1,9 +1,9 @@
 import React from 'react';
 import { Card, Container, Row , Button, Col} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import useServices from '../../hooks/useServices';
+import useServices from '../../../hooks/useServices';
 
-const Services = () => {
+const HomeServices = () => {
     const db = useServices();
     const allServices = db.services || [];
     
@@ -51,4 +51,4 @@ const Services = () => {
     );
 };
 
-export default Services;
+export default HomeServices;

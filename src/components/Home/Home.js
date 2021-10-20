@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Col, Container, Image, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import Services from '../Services/Services';
+import HomeServices from './HomeServices/HomeServices';
 import About from './About/About';
 import Gallery from './Gallery/Gallery';
 
@@ -15,7 +15,7 @@ const Home = () => {
                     <Row className="py-5 align-items-center">
                         <Col xs={12} md={6}>
                             <h1>
-                            Progressive methods. Caring approach.
+                            Uncompromising excellence, committed to care
                             </h1>
                             <p>Trusted results for Cancer Hospital In New York. Check Visymo Search for the best results! Unlimited Access. 100% Secure. Always Facts. Privacy Friendly. The Best Resources. Results and Answers. Types: Best Results, Explore Now, New Sources, Best in Search.</p>
                             <Link to="/pricing">
@@ -30,7 +30,7 @@ const Home = () => {
                 </Container>
             </div>
             
-            <Services></Services>
+            <HomeServices></HomeServices>
             <About></About>
             <Gallery></Gallery>
         </div>

@@ -34,7 +34,7 @@ const Header = () => {
                                       
                         </Nav>
                         <Nav className="fw-bold">
-                            {user.email && <Nav.Link    className='text-primary' disabled>{user.displayName || 'User'}</Nav.Link>}
+                            {user.email && <Nav.Link    className='text-primary' disabled>{user.displayName || 'Please Reload'}</Nav.Link>}
                             {!user.email ? <Nav.Link  as={Link} to="/login">
                             Sign in
                             </Nav.Link>

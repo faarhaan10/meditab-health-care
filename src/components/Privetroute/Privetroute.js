@@ -3,10 +3,12 @@ import { Spinner } from 'react-bootstrap';
 import { Redirect, Route } from 'react-router';
 import useAuth from '../../hooks/useAuth';
 
-const Privetroute = ({children, ...rest}) => {
+const PrivetRoute = ({children, ...rest}) => {
     const {user,isLoading} = useAuth();
     if(isLoading){
-        return <Spinner animation="border" variant="info" />
+        return <div className="d-flex justify-content-center align-items-center m-5 p-5">
+            <Spinner className="m-5 p-5" animation="grow" variant="warning" />
+        </div>
     }
     return (
         <Route
@@ -23,4 +25,4 @@ const Privetroute = ({children, ...rest}) => {
     );
 };
 
-export default Privetroute;
+export default PrivetRoute;

@@ -10,7 +10,7 @@ const PlaceOrder = () => {
     const pricing = db.pricing || [];
 
     const selectedPackage = pricing.find(price => price.pId === parseInt(priceID)) || {};
-    console.log(selectedPackage)
+    
     return (
         <div>
             <Container>
@@ -23,20 +23,22 @@ const PlaceOrder = () => {
                         <h4>We'll Provide These Services for you and your family:</h4>
                         <div className="d-flex justify-content-center align-items-center">
                             <div className="">
-                            <h5 className="m-0 p-0"><span className='text-success'><i class="far fa-check-square"></i></span> {selectedPackage.departments} Departments</h5>
-                        <h5 className="m-0 p-0"><span className='text-success'><i class="far fa-check-square"></i></span> {selectedPackage.tests} Tests</h5>
-                        <h5 className="m-0 p-0"><span className='text-success'><i class="far fa-check-square"></i></span> {selectedPackage.emergency} Emergency</h5>
-                        <h5 className="m-0 p-0"><span className='text-success'><i class="far fa-check-square"></i></span> No Assisdance</h5>
+                            <h5 className="m-0 p-0"><span className='text-success'><i className="far fa-check-square"></i></span> {selectedPackage.departments} Departments</h5>
+                        <h5 className="m-0 p-0"><span className='text-success'><i className="far fa-check-square"></i></span> {selectedPackage.tests} Tests</h5>
+                        <h5 className="m-0 p-0"><span className='text-success'><i className="far fa-check-square"></i></span> {selectedPackage.emergency} Emergency</h5>
+                        <h5 className="m-0 p-0"><span className='text-success'><i className="far fa-check-square"></i></span> No Assisdance</h5>
                             </div>
                         </div>
                         <ButtonGroup  className="mt-4">
                             <Link to='/pricing'>
-                            <Button variant='outline-danger'><i className="fas fa-chevron-circle-left"></i> Go back
-                            </Button>
+                                <Button variant='outline-danger'><i className="fas fa-chevron-circle-left"></i> Go back
+                                </Button>
                             </Link>
-                            <Button variant='outline-success'>
-                            Checkout <i className="fas fa-chevron-circle-right"></i>
-                            </Button>
+                             <Link to='/checkout'>
+                                <Button variant='outline-success'>
+                                Checkout <i className="fas fa-chevron-circle-right"></i>
+                                </Button>     
+                            </Link>   
                         </ButtonGroup>
                     </Col>
                     <Col xs={12} md={6}>

@@ -7,7 +7,7 @@ import useAuth from '../../hooks/useAuth';
 
 const Login = () => {
     const [isLogin,setIsLogin] = useState(false);
-    const {handleGoogleSignIn,handleGitHubSignIn,handleEmailPassSignUp,handleEmailPassSignIN,error,setError,setIsLoading} = useAuth();
+    const {handleGoogleSignIn,handleGitHubSignIn,handleEmailPassSignUp,handleEmailPassSignIN,error,setError,setIsLoading,handleUpdateProfile} = useAuth();
     const { register, handleSubmit } = useForm();
     const location = useLocation()
     const history = useHistory();
@@ -17,14 +17,14 @@ const Login = () => {
 
 
     const onSubmit = data => {
-        const {email,password} = data;
+        const {name,email,password} = data;
         
         if(password.length >= 6){
             if(isLogin){
                 handleUserLogin(email,password);
             }
             else{
-                handleUserReg(email,password);
+                handleUserReg(name,email,password);
                 
             }
         }
@@ -71,16 +71,19 @@ const Login = () => {
         .finally(() => setIsLoading(false))
     }
 
-    const handleUserReg = (email,password) => {
+    const handleUserReg = (name,email,password) => {
+        console.log('name',name);
         handleEmailPassSignUp(email,password)
         .then(res => {
+            handleUpdateProfile(name)
             history.push(redirect_uri);
         })
         .catch(error => {
             setError(error.message)
         })
-        .finally(() => setIsLoading(false))
-    }
+        .finally(() => {
+            setIsLoading(false)})
+        }
     
     return (
         <div>
