@@ -9,7 +9,7 @@ const Header = () => {
     
     return (
         <div className="App">
-            <Navbar collapseOnSelect expand="lg" bg="" variant="" className="py-0 App" fixed="top">
+            <Navbar collapseOnSelect expand="lg" bg="" variant="light" className="py-0 App" fixed="top">
                 <Container>
                     <Navbar.Brand as={Link} to="/" className="py-0">
                         <Image fluid width='150' src="https://i.ibb.co/qB7fS5v/logo.png" alt="logo"/>
@@ -17,9 +17,9 @@ const Header = () => {
 
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
-                    <Navbar.Collapse id="responsive-navbar-nav ">
+                    <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto fw-bold">
-                            <Nav.Link as={Link} to="/home">Home</Nav.Link>
+                            <Nav.Link as={Link} to="/home" >Home</Nav.Link>
 
                             <Nav.Link as={HashLink} to="/home#services">Services</Nav.Link>   
 
@@ -34,7 +34,7 @@ const Header = () => {
                                       
                         </Nav>
                         <Nav className="fw-bold">
-                            {user.email && <Nav.Link as={Link} to="/deets" disabled>{user.displayName}</Nav.Link>}
+                            {user.email && <Nav.Link    className='text-primary' disabled>{user.displayName || 'User'}</Nav.Link>}
                             {!user.email ? <Nav.Link  as={Link} to="/login">
                             Sign in
                             </Nav.Link>

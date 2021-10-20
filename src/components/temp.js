@@ -29,7 +29,6 @@ const data = {
         {dID:8,dName:'Angelina Joli', section:'Neurologist',dImg:'https://i.ibb.co/VpGwpGg/pleased-young-female-doctor-wearing-medical-robe-stethoscope-around-neck-standing-with-closed-postur.png'}
     ],
     gallery:[
-        {imgId:20,thumb:''},
         {imgId:20,thumb:'https://i.ibb.co/9N5BHS6/image.png'},
         {imgId:21,thumb:'https://i.ibb.co/QpD0qfR/image.png'},
         {imgId:22,thumb:'https://i.ibb.co/4VhXp2v/image.png'},
@@ -37,16 +36,11 @@ const data = {
         {imgId:24,thumb:'https://i.ibb.co/ygtnpCc/image.png'},
         {imgId:25,thumb:'https://i.ibb.co/9N5BHS6/image.png'},
         {imgId:26,thumb:'https://i.ibb.co/QpD0qfR/image.png'},
-        {imgId:27,thumb:'https://i.ibb.co/8mq1GRm/image.png'},
+        {imgId:27,thumb:'https://i.ibb.co/8mq1GRm/image.png'}
+    ],
+    pricing:[
+        {pId:1,price:150,departments:3,tests:15,emergency:15,assisdance:null},
+        {pId:2,price:230,departments:5,tests:20,emergency:20,assisdance:null},
+        {pId:3,price:450,departments:10,tests:25,emergency:25,assisdance:null}
     ]
 }
-
-
-
-
-
-
-
-
-
-

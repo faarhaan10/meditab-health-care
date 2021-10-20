@@ -14,6 +14,7 @@ import Login from './components/Login/Login';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
 import Privetroute from './components/Privetroute/Privetroute';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
+import PlaceOrder from './components/PlaceOrder/PlaceOrder';
 
 
 function App() {
@@ -22,6 +23,8 @@ function App() {
       <BrowserRouter>
       {/* scroll restoration */}
       <ScrollToTop />
+
+      {/* nav bar  */}
         <Header/>
 
         <Switch>
@@ -51,6 +54,10 @@ function App() {
 
           <Privetroute path="/service/:serviceID">
             <Service></Service>
+          </Privetroute>
+
+          <Privetroute path="/placeorder/:priceID">
+            <PlaceOrder></PlaceOrder>
           </Privetroute>
 
           <Route path="/login">
