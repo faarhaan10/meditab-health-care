@@ -2,7 +2,7 @@
 
 This project is live at: https://meditab-health-care.web.app/
 
-##About this project:
+### About this project:
 This is a amazing project created with some codes and hard-workfull mentality, nothing else.  Combination of all fucntionlities are seems difficult, But was far easier than I think at first time. Anyway this is a `web-app` about `health care`. You can visit on this web-app here: https://meditab-health-care.web.app/ . But rememdber you cannot visit all routes because some routes are `privet-route`, you have to `login` first to visit. Dont worry about your information. Its `authenticated` with `google` and `git-hub` using `firebase` Thats it.
 
 
@@ -16,7 +16,7 @@ This is a amazing project created with some codes and hard-workfull mentality, n
 
 ### Some Extras
 - Email vaidation
-- mouseover animatin
+- mouseover animation
 - font-awesome
 - react-hook-form
 - multiple account creation
