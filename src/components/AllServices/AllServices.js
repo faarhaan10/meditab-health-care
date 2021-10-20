@@ -33,7 +33,7 @@ const AllServices = () => {
                                             </Card.Body>
                                             <Card.Footer className='bg-transparent border-0'>
                                             <Link to={`/service/${service.id}`}>
-                                                <Button className='w-100' variant="primary">Go somewhere</Button>
+                                                <Button className='w-100' variant="outline-primary">Learn more</Button>
                                             </Link>
                                             </Card.Footer>
                                     </Card>
