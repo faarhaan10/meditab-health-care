@@ -8,18 +8,17 @@ This is a amazing project created with some codes and hard-workfull mentality, n
 
 ### Fucntionalities
 - its a react application
-- react-route
-- privet-route
-- react-bootstrap-componant
-- firebase authenticaton
-- firebase deploy
+- New user can register and sign-in with email, password.
+- Users can also sign-in using Google, GitHub. 
+- Users can choose suitable package and purchase service for a year.
+- No user cant purchase any service without login
+- This project depolye on firebase.
 
 ### Some Extras
 - Email vaidation
 - mouseover animation
 - font-awesome
 - react-hook-form
-- multiple account creation
 
 ### About me
 👋 Hi, I’m Farhan Elias
